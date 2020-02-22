@@ -30,9 +30,9 @@ public class BrandController {
     public Result<PageInfo<Brand>> findPage(@PathVariable(value = "pageNum")Integer pageNum,
                                             @PathVariable(value = "size")Integer size,
                                             @RequestBody(required = false)Brand brand){
-        int q=10/0;
         //调用Service实现分页查询
         PageInfo<Brand> pageInfo = brandService.findPage(brand,pageNum, size);
+
         return new Result<PageInfo<Brand>>(true, StatusCode.OK,"条件查询品牌集合成功！",pageInfo);
     }
 
@@ -108,7 +108,7 @@ public class BrandController {
     /****
      * 查询所有
      */
-    @GetMapping
+    @GetMapping(value = "/all")
     public Result<List<Brand>> findAll(){
         //调用Service查询所有
         List<Brand> brands = brandService.findAll();

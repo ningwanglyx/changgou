@@ -13,6 +13,7 @@
     <description>微服务父工程</description>
     <modules>
         <module>changgou-service-goods</module>
+        <module>changgou-service-file</module>
     </modules>
 
     <!--依赖-->
